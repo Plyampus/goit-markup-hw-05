@@ -554,6 +554,16 @@ button {
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms linear, visibility 250ms linear;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .modal {
@@ -562,6 +572,7 @@ button {
   min-height: 584px;
   background-color: var(--color-modal_background);
   border-radius: 4px;
+  padding: 72px 24px 24px 24px;
 }
 
 .modal-btn-close {
@@ -569,13 +580,193 @@ button {
   padding: 0;
   top: 24px;
   right: 24px;
-  background-color: transparent;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 0;
-  stroke: var(--color-green);
+  border-radius: 50%;
+  background-color: var(--color-cornflower);
+  fill: var(--color-dark);
+  width: 24px;
+  height: 24px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .modal-btn-close:hover,
 .modal-btn-close:focus {
-  
+  background-color: var(--color-pressed-state);
+}
+
+.modal-btn-close:hover,
+.modal-btn-close:focus {
+  fill: var(--color-white-background);
+}
+
+.review-form-description {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+}
+
+.review-form-field-label {
+  display: block;
+  color: var(--color-light-slate);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.review-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  padding-left: 38px;
+  transition: border-color 250ms linear;
+  outline: 0px solid transparent;
+}
+
+.review-form-input:focus {
+  border-color: var(--color-primary-brand);
+}
+
+.review-form-field-wrapper {
+  margin-bottom: 8px;
+}
+
+.review-form-input-wrapper {
+  position: relative;
+}
+
+.review-form-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--color-dark);
+}
+
+.review-form-input:focus + .review-form-input-icon {
+  fill: var(--color-primary-brand);
+}
+
+.review-form-comment {
+  width: 100%;
+  color: rgba(46, 47, 66, 0.4);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  height: 120px;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  padding: 8px 16px 98px 16px;
+  resize: none;
+  transition: border-color 250ms linear;
+  outline: 0px solid transparent;
+}
+
+.review-form-comment::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.review-form-comment:focus {
+  border-color: var(--color-primary-brand);
+}
+
+.review-form-own-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  stroke-width: 1px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.review-form-checkbox-label {
+  color: var(--color-light-slate);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+}
+
+.review-form-checkbox-wrapper {
+  margin-bottom: 24px;
+}
+
+.review-form-own-checkbox-icon {
+  fill: var(--color-cloud);
+  opacity: 0;
+}
+
+.review-form-checkbox:checked
+  + .review-form-checkbox-label
+  > .review-form-own-checkbox {
+  background-color: var(--color-pressed-state);
+  border-color: var(--color-pressed-state);
+}
+
+.review-form-checkbox:focus
+  + .review-form-checkbox-label
+  > .review-form-own-checkbox {
+  outline: 1px solid rgba(46, 47, 66, 0.4);
+}
+
+.review-form-checkbox:checked
+  + .review-form-checkbox-label
+  .review-form-own-checkbox-icon {
+  opacity: 1;
+}
+
+.accent-color {
+  color: var(--color-primary-brand);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+}
+
+.review-form-submit-btn {
+  display: inline-flex;
+  justify-content: center;
+  width: 169px;
+  height: 56px;
+  color: var(--color-white-background);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  padding: 16px 32px;
+  align-items: flex-start;
+  gap: 10px;
+  border: none;
+  border-radius: 4px;
+  background: var(--color-primary-brand);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.review-form-submit-btn:hover,
+.review-form-submit-btn:focus {
+  background-color: var(--color-pressed-state);
+}
+
+.review-form-submit-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
