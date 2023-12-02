@@ -706,10 +706,6 @@ button {
   margin-bottom: 24px;
 }
 
-.review-form-field-wrapper-comment {
-  margin-bottom: 16px;
-}
-
 .review-form-own-checkbox-icon {
   fill: var(--color-cloud);
   opacity: 0;
