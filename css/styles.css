@@ -497,6 +497,14 @@ button {
   max-width: 264px;
 }
 
+.footer-logotype {
+  margin-right: 120px;
+}
+
+.footer-social-media {
+  margin-right: 80px;
+}
+
 .social-media {
   color: var(--color-white-background);
   font-family: Roboto;
@@ -514,7 +522,6 @@ button {
 
 .social-media-footer {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
 }
 
@@ -792,7 +799,8 @@ input::placeholder {
   + .review-form-checkbox-label
   > .review-form-own-checkbox {
   background-color: var(--color-pressed-state);
-  border-color: var(--color-pressed-state);
+  border: none;
+  fill: var(--color-cloud);
 }
 
 .review-form-checkbox:focus
