@@ -482,6 +482,25 @@
             </li>
           </ul>
         </div>
+        <div class="footer-form-subscribe">
+          <p class="footer-subscribe">Subscribe</p>
+          <form class="footer-form">
+            <label class="footer-form-label" for="">
+              <input
+                class="footer-form-input"
+                name="email"
+                type="email"
+                placeholder="E-mail"
+              />
+            </label>
+            <button class="footer-btn-submit" type="submit">
+              Subscribe
+              <svg class="footer-btn-submit-icon" width="24" height="24">
+                <use href="./images/icons.svg#icon-footer-submit" />
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -517,7 +536,7 @@
               <svg
                 class="review-form-input-icon"
                 width="18"
-                height="18"
+                height="24"
                 aria-label="icon user"
               >
                 <use href="./images/icons.svg#icon-user"></use>
@@ -539,7 +558,7 @@
               <svg
                 class="review-form-input-icon"
                 width="18"
-                height="18"
+                height="24"
                 aria-label="icon phone"
               >
                 <use href="./images/icons.svg#icon-phone"></use>
@@ -561,14 +580,14 @@
               <svg
                 class="review-form-input-icon"
                 width="18"
-                height="18"
+                height="24"
                 aria-label="icon email"
               >
                 <use href="./images/icons.svg#icon-email"></use>
               </svg>
             </div>
           </div>
-          <div class="review-form-field-wrapper">
+          <div class="review-form-field-wrapper-comment">
             <label class="review-form-field-label" for="user-comment"
               >Comment</label
             >
@@ -583,13 +602,13 @@
           <div class="review-form-checkbox-wrapper">
             <input
               class="review-form-checkbox visually-hidden"
-              id="user-privacy-policy"
-              name="user-privacy-policy"
+              id="user-privacy"
+              name="user-privacy"
               type="checkbox"
               value="true"
               required
             />
-            <label class="review-form-checkbox-label" for="user-privacy-policy">
+            <label class="review-form-checkbox-label" for="user-privacy">
               <span class="review-form-own-checkbox">
                 <svg
                   class="review-form-own-checkbox-icon"
@@ -604,9 +623,7 @@
               <a class="accent-color" href="">Privacy Policy</a>
             </label>
           </div>
-          <div class="review-form-submit-btn-container">
-            <button class="review-form-submit-btn" type="submit">Send</button>
-          </div>
+          <button class="review-form-submit-btn" type="submit">Send</button>
         </form>
       </div>
     </div>
